@@ -1,0 +1,4 @@
+type,name,model,serial_number,inventory_number,cpu,ram,hdd,os,start_date,warranty,status
+server,Сервер 1,IBM X3650,123ABC,INV1001,Intel Xeon,32GB,2TB,Windows Server,2022-01-10,2025-01-10,active
+pc,ПК Иванова,HP ProDesk,555572,INV1002,i5-6500,8GB,256GB,Windows 11,2023-05-10,2026-05-10,active
+network_device,Маршрутизатор,Cisco2901,RTR900,INV1003,-,-,-,IOS,2021-03-15,2024-03-15,reserve
