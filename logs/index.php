@@ -6,7 +6,8 @@ if (!is_admin()) { echo '<div class="alert alert-danger">Только для а�
 $stmt = $pdo->query('SELECT l.*, u.username FROM logs l LEFT JOIN users u ON l.user_id=u.id ORDER BY l.id DESC LIMIT 50');
 ?>
 <h2>Журнал действий</h2>
-<table class="table table-bordered table-hover">
+<div class="table-responsive">
+<table class="table table-bordered table-hover mb-0">
   <thead><tr><th>Пользователь</th><th>Действие</th><th>Описание</th><th>Время</th></tr></thead>
   <tbody>
     <?php foreach ($stmt as $row): ?>
@@ -19,4 +20,5 @@ $stmt = $pdo->query('SELECT l.*, u.username FROM logs l LEFT JOIN users u ON l.u
     <?php endforeach; ?>
   </tbody>
 </table>
+</div>
 <?php include '../templates/footer.php'; ?>

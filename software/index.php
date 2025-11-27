@@ -47,7 +47,8 @@ $items = $stmt->fetchAll();
   <?php endif; ?>
 </form>
 <a href="add.php" class="btn btn-success mb-3">Добавить ПО</a>
-<table class="table table-bordered table-hover">
+<div class="table-responsive">
+<table class="table table-bordered table-hover mb-0">
     <thead>
         <tr>
             <th>ID</th>
@@ -75,4 +76,5 @@ $items = $stmt->fetchAll();
         <?php endforeach; ?>
     </tbody>
 </table>
+</div>
 <?php include '../templates/footer.php'; ?>

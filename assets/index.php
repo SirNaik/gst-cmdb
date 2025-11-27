@@ -47,7 +47,8 @@ function status_badge($status) {
   <?php endif; ?>
 </form>
 <a href="add.php" class="btn btn-success mb-3">Добавить оборудование</a>
-<table class="table table-bordered table-hover">
+<div class="table-responsive">
+<table class="table table-bordered table-hover mb-0">
     <thead>
         <tr>
             <th>ID</th>
@@ -93,4 +94,5 @@ function status_badge($status) {
         <?php endforeach; ?>
     </tbody>
 </table>
+</div>
 <?php include '../templates/footer.php'; ?>
