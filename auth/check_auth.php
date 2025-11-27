@@ -1,7 +1,8 @@
 <?php
+require_once __DIR__ . '/../config.php';
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /auth/login.php');
+    header('Location: ' . BASE_PATH . '/auth/login.php');
     exit;
 }
 // функция проверки роли

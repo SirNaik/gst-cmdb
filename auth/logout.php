@@ -1,6 +1,7 @@
 <?php
+require_once __DIR__ . '/../config.php';
 session_start();
 session_unset();
 session_destroy();
-header('Location: login.php');
+header('Location: ' . BASE_PATH . '/auth/login.php');
 exit;

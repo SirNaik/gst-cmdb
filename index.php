@@ -1,7 +1,8 @@
 <?php
+require_once 'config.php';
 require_once 'auth/check_auth.php';
 if (isset($_SESSION['user_id'])) {
-  header('Location: dashboard.php'); exit;
+  header('Location: ' . BASE_PATH . '/dashboard.php'); exit;
 }
 ?><!DOCTYPE html>
 <html lang="ru">
@@ -20,8 +21,8 @@ if (isset($_SESSION['user_id'])) {
 <div class="container mt-4">
     <h1>Добро пожаловать в GST-CMDB</h1>
     <p class="text-muted">Система учёта ИТ-активов, лицензий и уведомлений.</p>
-    <div class="alert alert-info mb-4">Пожалуйста, <a href="/auth/login.php">войдите в систему</a> для работы с базой данных.</div>
-    <div class="alert alert-secondary">Если вы только что установили систему, создайте первого администратора через <a href="/auth/register_admin.php">эту страницу</a>.</div>
+    <div class="alert alert-info mb-4">Пожалуйста, <a href="<?= BASE_PATH ?>/auth/login.php">войдите в систему</a> для работы с базой данных.</div>
+    <div class="alert alert-secondary">Если вы только что установили систему, создайте первого администратора через <a href="<?= BASE_PATH ?>/auth/register_admin.php">эту страницу</a>.</div>
 </div>
 <footer class="text-center mt-5 mb-3 text-muted">
   &copy; <?= date('Y') ?> GST-CMDB

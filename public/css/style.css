@@ -13,21 +13,40 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 14px;
   margin: 0;
-  background: linear-gradient(135deg, #eef2ff 0%, #fef3c7 100%);
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #f8fafc 100%) !important;
+  background-attachment: fixed !important;
   color: var(--text-main);
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container {
   max-width: 1200px;
 }
 
-.navbar {
-  background: var(--card-bg);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+.navbar.navbar-light {
+  background: var(--card-bg) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08) !important;
+  position: relative;
+  z-index: 10;
 }
 
 .navbar .navbar-brand {
@@ -45,6 +64,8 @@ body {
 .page-content {
   margin-top: 32px;
   margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
 }
 
 .card,
@@ -63,26 +84,49 @@ body {
 .table {
   background: var(--card-bg);
   overflow: hidden;
+  font-size: 13px;
 }
 
 .table thead th {
-  background: #f8fafc;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 10px 8px;
+  border: none !important;
+}
+
+.table tbody td {
+  padding: 10px 8px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+
+.table tbody tr:first-child td {
+  border-top: 2px solid rgba(37, 99, 235, 0.1);
 }
 
 .table tbody tr:hover {
   background: rgba(37, 99, 235, 0.08);
+  transition: background 0.2s ease;
 }
 
 .btn {
   border-radius: 999px;
-  padding: 10px 20px;
+  padding: 6px 12px;
   border: none;
   font-weight: 600;
+  font-size: 12px;
   transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 11px;
 }
 
 .btn-primary {
@@ -144,6 +188,26 @@ footer {
   color: var(--text-muted);
 }
 
+/* Ячейка с кнопками действий */
+.table tbody td:last-child {
+  padding: 8px 4px !important;
+  white-space: nowrap !important;
+  width: auto;
+  min-width: 150px;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.table tbody td:last-child .btn {
+  display: inline-block !important;
+  margin: 0 !important;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .navbar .container-fluid {
     flex-direction: column;
@@ -151,9 +215,23 @@ footer {
     gap: 12px;
   }
 
-  .btn {
-    width: 100%;
-    margin-bottom: 8px;
+  .table {
+    font-size: 11px;
+  }
+
+  .table thead th {
+    font-size: 10px;
+    padding: 8px 6px;
+  }
+
+  .table tbody td {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+
+  .btn-sm {
+    padding: 3px 8px;
+    font-size: 10px;
   }
 
   .table-responsive {

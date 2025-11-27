@@ -16,3 +16,9 @@ define('GST_NOTIFY_EMAIL', 'admin@example.com');
 define('GST_NOTIFY_PERIOD', 30); // дней
 // Название системы
 define('GST_SYS_NAME', 'GST-CMDB');
+
+// Базовый путь (если сайт в подпапке, укажите путь, например: '/gst' или оставьте пустым '' для корня)
+// Укажите здесь путь к папке, где находится проект
+if (!defined('BASE_PATH')) {
+    define('BASE_PATH', '/gst');
+}
